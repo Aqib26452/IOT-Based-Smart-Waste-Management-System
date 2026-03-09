@@ -3,7 +3,7 @@ import hero from "../../assets/homePage/homePage.png"; // your top image
 
 const HeroSection = () => {
   return (
-    <section className="bg-green-100 min-h-screen flex flex-col items-center justify-center px-6 py-10">
+    <section className="bg-green-200 min-h-screen flex flex-col items-center justify-center px-6 py-10">
       {/* Image Container */}
       <div className="bg-white rounded-xl shadow-md p-6 max-w-5xl w-full flex justify-center">
         <img

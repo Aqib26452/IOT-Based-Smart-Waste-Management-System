@@ -1,8 +1,8 @@
 import React from "react";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import logo from "../../assets/auth/Logo.png";
-import img from "../../assets/auth/rightpic.png";
+import logo from "../../assets/auth/Login_Logo.png";
+import img from "../../assets/auth/Right_Img.png";
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -11,57 +11,101 @@ const LoginPage = () => {
     navigate(-1); // go one step back
   };
   return (
-    <div className="flex h-screen  items-center justify-center ">
-      <div className="flex items-center justify-center  h-full w-1/2">
-        <img src={img} alt="illustration" className="w-[420px]" />
-      </div>
-      <div className="flex flex-col justify-center w-1/2 px-10 ">
-        {/* Back Icon */}
-        <div className="text-green-500 cursor-pointer" onClick={handleBack}>
-          <ArrowLeft size={28} />
-        </div>
-        {/* Logo */}
-        <div className="flex items-center gap-3 ">
-          <img src={logo} alt="logo" className="w-[200px] h-[330] " />
-        </div>
+ <div className="h-screen w-full bg-white flex items-center justify-center">
 
-        {/* Title */}
-        <h1 className="text-4xl font-bold  text-center">Welcome Back</h1>
+      {/* Main Card */}
+      <div className="flex w-[1100px] h-[650px] bg-white rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.15)] overflow-hidden">
 
-        {/* Email */}
-        <div className="flex flex-col mb-5">
-          <label className="text-sm mb-2 font-semibold">Email / Username</label>
-          <input
-            type="text"
-            className="border border-gray-300 rounded-full px-4 py-3 outline-none focus:ring-2 focus:ring-green-400"
+        {/* LEFT SIDE */}
+        <div
+          className="w-6/2 flex items-center justify-center"
+          style={{ backgroundColor: "#22C55E" }}
+        >
+          <img
+            src={img}
+            alt="illustration"
+            className="w-[1020px] object-contain"
           />
         </div>
 
-        {/* Password */}
-        <div className="flex flex-col mb-3">
-          <label className="text-sm mb-2 font-semibold">Password</label>
-          <input
-            type="password"
-            className="border border-gray-300 rounded-full px-4 py-3 outline-none focus:ring-2 focus:ring-green-400"
-          />
-        </div>
+        {/* RIGHT SIDE */}
+        <div className="w-3/2 flex flex-col justify-center px-12">
 
-        {/* Forgot */}
-        <div className="text-right mb-6">
-          <a href="#" className="text-green-500 text-sm">
-            Forget password?
-          </a>
-        </div>
+          {/* Back Button */}
+          <div
+            className="text-green-600 cursor-pointer mb-4"
+            onClick={handleBack}
+          >
+            <ArrowLeft size={26} />
+          </div>
 
-        {/* Button */}
-        <button className="bg-green-500 hover:bg-green-600 text-white py-3 rounded-full text-lg ">
-          Login
-        </button>
-        <div className=" mb-6 flex items-center gap-2 mt-3 right-0  justify-center">
-          <p>Already have an account ?</p>
-          <a href="#" className="text-green-500 text-sm">
-            Signup
-          </a>
+          {/* Logo */}
+          <div className="flex justify-center">
+            <img src={logo} alt="logo" className="w-[220px]" />
+          </div>
+
+          {/* Title */}
+          <h1 className="text-3xl font-bold text-center">
+            Welcome Back
+          </h1>
+
+          <p className="text-center text-gray-500 mb-6">
+            Enter your email and password to sign in
+          </p>
+
+          {/* Email */}
+          <div className="flex flex-col mb-4">
+            <label className="text-sm font-semibold mb-2">
+              Email / Username
+            </label>
+
+            <input
+              type="text"
+              placeholder="Enter email"
+              className="border border-gray-300 rounded-full px-4 py-3 outline-none focus:ring-2 focus:ring-green-400"
+            />
+          </div>
+
+          {/* Password */}
+          <div className="flex flex-col mb-2">
+            <label className="text-sm font-semibold mb-2">
+              Password
+            </label>
+
+            <input
+              type="password"
+              placeholder="Enter password"
+              className="border border-gray-300 rounded-full px-4 py-3 outline-none focus:ring-2 focus:ring-green-400"
+            />
+          </div>
+
+          {/* Remember + Forgot */}
+          <div className="flex justify-between items-center mb-6 mt-2">
+
+            <div className="flex items-center gap-2">
+              <input type="checkbox" />
+              <span className="text-sm">Remember me</span>
+            </div>
+
+            <a href="#" className="text-green-600 text-sm">
+              Forgot password?
+            </a>
+
+          </div>
+
+          {/* Login Button */}
+          <button className="bg-green-500 hover:bg-green-600 transition text-white py-3 rounded-full text-lg font-semibold">
+            SIGN IN
+          </button>
+
+          {/* Signup */}
+          <div className="flex justify-center items-center gap-2 mt-5">
+            <p className="text-sm">Don't have an account?</p>
+            <a href="#" className="text-green-600 text-sm font-medium">
+              Sign up
+            </a>
+          </div>
+
         </div>
       </div>
     </div>

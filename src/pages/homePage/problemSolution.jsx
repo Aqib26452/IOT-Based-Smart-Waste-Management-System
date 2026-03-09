@@ -32,8 +32,8 @@ const ProblemsSolutions = () => {
     <section className="bg-gray-100 py-16 px-6">
       <div className="max-w-5xl mx-auto text-center">
         {/* Title */}
-        <h2 className="text-3xl font-bold text-green-600 mb-3">
-          Problems Vs Solutions
+        <h2 className="text-3xl font-bold mb-3">
+          <span className="text-green-500">Problems</span> Vs <span className="text-green-500">Solutions</span>
         </h2>
 
         <p className="text-gray-600 mb-12">

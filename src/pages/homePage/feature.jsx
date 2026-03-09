@@ -45,7 +45,7 @@ const Features = () => {
   return (
     <section className="bg-gray-100 py-16 px-6">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-3xl font-bold text-green-600 mb-3">Our Features</h2>
+        <h2 className="text-3xl font-bold  mb-3">Our <span className="text-green-500">Features</span></h2>
 
         <p className="text-gray-600 mb-12">
           Powerful smart technologies that enhance monitoring, collection, and
