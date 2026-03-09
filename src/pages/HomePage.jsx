@@ -6,6 +6,8 @@ import Features from "./homePage/feature";
 import ProblemsSolutions from "./homePage/problemSolution";
 import Services from "./homePage/service";
 import AwarenessCommunity from "./homePage/awarenessCommunity";
+import Contact from "./homePage/contact";
+import Footer from "./Shared/Footer";
 
 const HomePage = () => {
   return (
@@ -17,6 +19,8 @@ const HomePage = () => {
       <ProblemsSolutions />
       <Services />
       <AwarenessCommunity />
+      <Contact />
+      <Footer />
     </div>
   );
 };
