@@ -14,6 +14,9 @@ const LoginPage = () => {
   const handleSignup = () => {
     navigate("/signup");
   };
+  const handleForgot = () => {
+    navigate("/forget");
+  };
   return (
     <div className="h-screen w-full bg-white flex   p-0 m-0">
       {/* Main Card */}
@@ -82,10 +85,12 @@ const LoginPage = () => {
               <input type="checkbox" />
               <span className="text-sm">Remember me</span>
             </div>
-
-            <a href="#" className="text-green-600 text-sm">
+            <span
+              onClick={handleForgot}
+              className="text-green-600 text-sm cursor-pointer"
+            >
               Forgot password?
-            </a>
+            </span>
           </div>
 
           {/* Login Button */}
