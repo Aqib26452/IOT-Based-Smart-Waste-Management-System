@@ -5,19 +5,19 @@ import logo from "../../assets/auth/Login_Logo.png";
 import img from "../../assets/auth/Right_Img.png";
 import "../../style/auth.css";
 
-const LoginPage = () => {
+const SignUp = () => {
   const navigate = useNavigate();
 
   const handleBack = () => {
     navigate(-1);
   };
-  const handleSignup = () => {
-    navigate("/signup");
+  const handleLogin = () => {
+    navigate("/login");
   };
   return (
     <div className="h-screen w-full bg-white flex   p-0 m-0">
       {/* Main Card */}
-      <div className="flex w-full  bg-white  shadow-[0_20px_60px_rgba(0,0,0,0.15)] overflow-hidden">
+      <div className="flex w-full   S overflow-hidden ">
         {/* LEFT SIDE */}
         <div
           className="w-1/2 flex items-center justify-center overflow-hidden"
@@ -31,10 +31,10 @@ const LoginPage = () => {
         </div>
 
         {/* RIGHT SIDE */}
-        <div className="w-1/2 flex flex-col justify-center md:px-12">
+        <div className="w-1/2 flex flex-col justify-center items-center    md:px-12">
           {/* Back Button */}
           <div
-            className="text-green-600 cursor-pointer  mt-4"
+            className="text-green-600 cursor-pointer  mb-[-50px] w-full "
             onClick={handleBack}
           >
             <ArrowLeft size={26} />
@@ -48,15 +48,24 @@ const LoginPage = () => {
           {/* Title */}
           <h1 className="text-3xl font-bold text-center">Welcome Back</h1>
 
-          <p className="text-center text-gray-500 mb-6">
-            Enter your email and password to sign in
+          <p className="text-center text-gray-500 mb-6 font-bold">
+            Create the account
           </p>
 
+          {/* UserName */}
+          <div className="flex flex-col mb-4 w-full">
+            <label className="text-sm font-semibold mb-2">Name</label>
+
+            <input
+              type="text"
+              placeholder="Enter Name"
+              className="border border-gray-300 rounded-full  px-4 py-3 outline-none focus:ring-2 focus:ring-green-400"
+            />
+          </div>
           {/* Email */}
-          <div className="flex flex-col mb-4">
-            <label className="text-sm font-semibold mb-2">
-              Email / Username
-            </label>
+
+          <div className="flex flex-col mb-4 w-full">
+            <label className="text-sm font-semibold mb-2">Email</label>
 
             <input
               type="text"
@@ -66,8 +75,10 @@ const LoginPage = () => {
           </div>
 
           {/* Password */}
-          <div className="flex flex-col mb-2">
-            <label className="text-sm font-semibold mb-2">Password</label>
+          <div className="flex flex-col mb-4 w-full">
+            <label className="text-sm font-semibold mb-2">
+              Create Password
+            </label>
 
             <input
               type="password"
@@ -76,31 +87,19 @@ const LoginPage = () => {
             />
           </div>
 
-          {/* Remember + Forgot */}
-          <div className="flex justify-between items-center mb-6 mt-2">
-            <div className="flex items-center gap-2">
-              <input type="checkbox" />
-              <span className="text-sm">Remember me</span>
-            </div>
-
-            <a href="#" className="text-green-600 text-sm">
-              Forgot password?
-            </a>
-          </div>
-
           {/* Login Button */}
-          <button className="bg-green-500 hover:bg-green-600 transition text-white py-3 rounded-full text-lg font-semibold">
-            LOG IN
+          <button className="w-full cursor-pointer bg-green-500 hover:bg-green-600 transition text-white py-3 rounded-full text-lg font-semibold">
+            SIGN UP
           </button>
 
           {/* Signup */}
           <div className="flex justify-center items-center gap-2 mt-5">
-            <p className="text-sm">Don't have an account?</p>
+            <p className="text-sm">Do you have an account..?</p>
             <span
-              onClick={handleSignup}
+              onClick={handleLogin}
               className="text-green-600 text-sm font-medium cursor-pointer"
             >
-              Sign up
+              Login
             </span>
           </div>
         </div>
@@ -109,4 +108,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default SignUp;
