@@ -1,22 +1,39 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
-import logo from "../../assets/auth/Logo.png";
-import { Menu, X } from "lucide-react";
+import logo from "../../assets/auth/Login_Logo.png";
+import { Menu, X, Headphones, LayoutDashboard,
+  CalendarCheck,
+  CheckSquare,
+  Trash2,
+  Map,
+  Upload,
+  Trophy,
+  User,
+  LogOut,
+  } from "lucide-react";
 
 const CollectorSidebar = () => {
   const [open, setOpen] = useState(false);
 
-  const menu = [
-    { name: "Dashboard", path: "" },
-    { name: "My Tasks", path: "tasks" },
-    { name: "Profile", path: "profile" },
-  ];
+ 
+    const menu = [
+      { name: "Dashboard", icon: <LayoutDashboard size={20} />, path: "" },
+      { name: "Attendance", icon: <CalendarCheck size={20} />, path: "attendance"   },
+      { name: "My Tasks", icon: <CheckSquare size={20} />, path: "tasks"  },
+      { name: "Bin Collections", icon: <Trash2 size={20} />, path: "bin-collections"  },
+      { name: "Collectors Routes", icon: <Map size={20} />, path: "collectors-routes"  },
+      { name: "Upload Proof", icon: <Upload size={20} />, path: "upload-proof" },
+      { name: "Reports", icon: <Upload size={20} />, path: "reports" },
+      // { name: "Achievements", icon: <Trophy size={20} />, path: "achievements" },
+      { name: "Profile", icon: <User size={20} />, path: "profile" },
+      { name: "Logout", icon: <LogOut size={20} />, path: "logout" },
+    ];
 
   return (
     <>
       {/* 🔹 Mobile Top Bar */}
       <div className="md:hidden flex items-center justify-between p-4 bg-white shadow">
-        <img src={logo} alt="logo" className="h-8" />
+        <img src={logo} alt="logo" className="h-full" />
         <button onClick={() => setOpen(true)}>
           <Menu />
         </button>
@@ -40,7 +57,7 @@ const CollectorSidebar = () => {
             </button>
           </div>
 
-          <img src={logo} alt="logo" className="mb-6" />
+          <img src={logo} alt="logo" className="mb-2" />
 
           {menu.map((item, index) => (
             <NavLink
@@ -49,23 +66,30 @@ const CollectorSidebar = () => {
               end
               onClick={() => setOpen(false)} // close on mobile click
               className={({ isActive }) =>
-                `block p-3 rounded-lg mb-2 transition ${
+                `flex items-center gap-3 px-4 py-3 rounded-lg mb-2 transition-all duration-200
+               ${
                   isActive
-                    ? "bg-green-500 text-white"
+                    ? "text-gay-900 shadow-md"
                     : "text-gray-700 hover:bg-green-100"
                 }`
               }
             >
-              {item.name}
+                 {/* Icon */}
+            <span className="text-lg">{item.icon}</span>
+
+            {/* Text */}
+            <span className="font-medium">{item.name}</span>
             </NavLink>
           ))}
         </div>
 
         {/* Bottom */}
         <div className="bg-green-500 m-4 p-3 rounded text-white">
-          <p>John Doe</p>
-          <button className="mt-2 bg-white text-green-600 px-3 py-1 rounded">
-            Logout
+      
+      <Headphones size={22} />
+          <p className="font-bold">Need Help?</p>
+          <button className="mt-2 bg-white text-green-600 px-3 py-1 rounded-full font-semibold">
+            Contact Support
           </button>
         </div>
       </div>

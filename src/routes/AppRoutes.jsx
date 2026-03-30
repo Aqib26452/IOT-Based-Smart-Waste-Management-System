@@ -10,6 +10,9 @@ import CollectorDashboard from "../pages/dashboard/collectorDashboard/CollectorD
 import Tasks from "../pages/dashboard/collectorDashboard/Tasks";
 import Reports from "../pages/dashboard/collectorDashboard/Reports";
 import Profile from "../pages/dashboard/collectorDashboard/Profile";
+import Attendance from "../pages/dashboard/collectorDashboard/Attendance";
+import BinCollection from "../pages/dashboard/collectorDashboard/BinCollection";
+import UploadProofs from "../pages/dashboard/collectorDashboard/UploadProofs";
 
 const AppRoutes = () => {
   return (
@@ -23,6 +26,9 @@ const AppRoutes = () => {
         <Route path="/Collector-Dashboard" element={<CollectorLayout />}>
           <Route index element={<CollectorDashboard />} />
           <Route path="tasks" element={<Tasks />} />
+          <Route path="attendance" element={<Attendance/>} />
+          <Route path="bin-collections" element={<BinCollection/>} />
+          <Route path="upload-proof" element={<UploadProofs/>} />
           {/* <Route path="routes" element={<RoutesPage />} /> */}
           <Route path="reports" element={<Reports />} />
           <Route path="profile" element={<Profile />} />
